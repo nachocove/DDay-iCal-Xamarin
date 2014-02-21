@@ -4,7 +4,6 @@ using System.Text;
 using System.Collections;
 using System.IO;
 using System.Resources;
-using System.Web;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using NUnit.Framework;
@@ -24,7 +23,7 @@ namespace DDay.iCal.Test
 
         private void CopyCalendarTest(string filename)
         {
-            IICalendar iCal1 = iCalendar.LoadFromFile(@"Calendars\Serialization\" + filename)[0];
+            IICalendar iCal1 = iCalendar.LoadFromFile(@"Calendars/Serialization/" + filename)[0];
             IICalendar iCal2 = iCal1.Copy<IICalendar>();
             SerializationTest.CompareCalendars(iCal1, iCal2);
         }

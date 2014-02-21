@@ -4,7 +4,6 @@ using System.Text;
 using System.Collections;
 using System.IO;
 using System.Resources;
-using System.Web;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using NUnit.Framework;
@@ -24,7 +23,7 @@ namespace DDay.iCal.Test
                 
         public void TestTodoActive(string calendar, ArrayList items, params int[] numPeriods)
         {
-            IICalendar iCal = iCalendar.LoadFromFile(@"Calendars\Todo\" + calendar)[0];
+            IICalendar iCal = iCalendar.LoadFromFile(@"Calendars/Todo/" + calendar)[0];
             ProgramTest.TestCal(iCal);
             ITodo todo = iCal.Todos[0];
             
@@ -53,7 +52,7 @@ namespace DDay.iCal.Test
 
         public void TestTodoCompleted(string calendar, ArrayList items)
         {
-            IICalendar iCal = iCalendar.LoadFromFile(@"Calendars\Todo\" + calendar)[0];
+            IICalendar iCal = iCalendar.LoadFromFile(@"Calendars/Todo/" + calendar)[0];
             ProgramTest.TestCal(iCal);
             ITodo todo = iCal.Todos[0];
             
@@ -178,7 +177,7 @@ namespace DDay.iCal.Test
         [Test, Category("Todo")]
         public void Todo7_1()
         {
-            IICalendar iCal = iCalendar.LoadFromFile(@"Calendars\Todo\Todo7.ics")[0];
+            IICalendar iCal = iCalendar.LoadFromFile(@"Calendars/Todo/Todo7.ics")[0];
             ITodo todo = iCal.Todos[0];
 
             ArrayList items = new ArrayList();

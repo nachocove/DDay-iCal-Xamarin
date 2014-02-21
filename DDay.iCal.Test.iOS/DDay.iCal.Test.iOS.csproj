@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2A200FD8-9A40-4F17-8754-43C8D3AB0C16}</ProjectGuid>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>DDay.iCal.Test.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>DDayiCalTestiOS</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchLink>None</MtouchLink>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchDebug>true</MtouchDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
+    <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <BuildIpa>true</BuildIpa>
+    <CodesignProvision>Automatic:AdHoc</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+    <Reference Include="MonoTouch.NUnitLite" />
+    <Reference Include="antlr.runtime">
+      <HintPath>..\..\..\Downloads\DDay\antlr\antlr.runtime\bin\antlr.runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="DDay.Collections">
+      <HintPath>..\..\..\Downloads\DDay\DDay.Collections\DDay.Collections\bin\Debug\DDay.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="DDay.iCal">
+      <HintPath>..\..\..\Downloads\DDay\DDay.iCal\bin\Debug\DDay.iCal.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Calendars\" />
+    <Folder Include="Custom\" />
+    <Folder Include="Data\" />
+    <Folder Include="Lists\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="UnitTestAppDelegate.cs" />
+    <Compile Include="..\DDay.iCal.Test\Custom\Custom1.cs">
+      <Link>Custom\Custom1.cs</Link>
+    </Compile>
+    <Compile Include="..\DDay.iCal.Test\AlarmTest.cs">
+      <Link>AlarmTest.cs</Link>
+    </Compile>
+    <Compile Include="..\DDay.iCal.Test\ComponentTest.cs">
+      <Link>ComponentTest.cs</Link>
+    </Compile>
+    <Compile Include="..\DDay.iCal.Test\CopyTest.cs">
+      <Link>CopyTest.cs</Link>
+    </Compile>
+    <Compile Include="..\DDay.iCal.Test\EventTest.cs">
+      <Link>EventTest.cs</Link>
+    </Compile>
+    <Compile Include="..\DDay.iCal.Test\FreeBusyTest.cs">
+      <Link>FreeBusyTest.cs</Link>
+    </Compile>
+    <Compile Include="..\DDay.iCal.Test\iCalDateTimeTest.cs">
+      <Link>iCalDateTimeTest.cs</Link>
+    </Compile>
+    <Compile Include="..\DDay.iCal.Test\JournalTest.cs">
+      <Link>JournalTest.cs</Link>
+    </Compile>
+    <Compile Include="..\DDay.iCal.Test\ProgramTest.cs">
+      <Link>ProgramTest.cs</Link>
+    </Compile>
+    <Compile Include="..\DDay.iCal.Test\RecurrenceTest.cs">
+      <Link>RecurrenceTest.cs</Link>
+    </Compile>
+    <Compile Include="..\DDay.iCal.Test\SerializationTest.cs">
+      <Link>SerializationTest.cs</Link>
+    </Compile>
+    <Compile Include="..\DDay.iCal.Test\TodoTest.cs">
+      <Link>TodoTest.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Todo\Todo1.ics">
+      <Link>Calendars\Todo\Todo1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Todo\Todo2.ics">
+      <Link>Calendars\Todo\Todo2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Todo\Todo3.ics">
+      <Link>Calendars\Todo\Todo3.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Todo\Todo4.ics">
+      <Link>Calendars\Todo\Todo4.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Todo\Todo5.ics">
+      <Link>Calendars\Todo\Todo5.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Todo\Todo6.ics">
+      <Link>Calendars\Todo\Todo6.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Todo\Todo7.ics">
+      <Link>Calendars\Todo\Todo7.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Todo\Todo8.ics">
+      <Link>Calendars\Todo\Todo8.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Todo\Todo9.ics">
+      <Link>Calendars\Todo\Todo9.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\Bug1741093.ics">
+      <Link>Calendars\Recurrence\Bug1741093.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\Bug2912657.ics">
+      <Link>Calendars\Recurrence\Bug2912657.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\Bug2916581.ics">
+      <Link>Calendars\Recurrence\Bug2916581.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\Bug2959692.ics">
+      <Link>Calendars\Recurrence\Bug2959692.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\Bug2966236.ics">
+      <Link>Calendars\Recurrence\Bug2966236.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\Bug3007244.ics">
+      <Link>Calendars\Recurrence\Bug3007244.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\Bug3312617.ics">
+      <Link>Calendars\Recurrence\Bug3312617.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\Bug3312618and3522651.ics">
+      <Link>Calendars\Recurrence\Bug3312618and3522651.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\Bug3312619.ics">
+      <Link>Calendars\Recurrence\Bug3312619.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\Bug3517553.ics">
+      <Link>Calendars\Recurrence\Bug3517553.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\ByMonth1.ics">
+      <Link>Calendars\Recurrence\ByMonth1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\ByMonth2.ics">
+      <Link>Calendars\Recurrence\ByMonth2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\ByMonthDay1.ics">
+      <Link>Calendars\Recurrence\ByMonthDay1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\Daily1.ics">
+      <Link>Calendars\Recurrence\Daily1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\DailyByDay1.ics">
+      <Link>Calendars\Recurrence\DailyByDay1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\DailyByHourMinute1.ics">
+      <Link>Calendars\Recurrence\DailyByHourMinute1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\DailyCount1.ics">
+      <Link>Calendars\Recurrence\DailyCount1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\DailyCount2.ics">
+      <Link>Calendars\Recurrence\DailyCount2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\DailyInterval1.ics">
+      <Link>Calendars\Recurrence\DailyInterval1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\DailyInterval2.ics">
+      <Link>Calendars\Recurrence\DailyInterval2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\DailyUntil1.ics">
+      <Link>Calendars\Recurrence\DailyUntil1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\Empty1.ics">
+      <Link>Calendars\Recurrence\Empty1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\Hourly1.ics">
+      <Link>Calendars\Recurrence\Hourly1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\HourlyInterval1.ics">
+      <Link>Calendars\Recurrence\HourlyInterval1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\HourlyInterval2.ics">
+      <Link>Calendars\Recurrence\HourlyInterval2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\HourlyUntil1.ics">
+      <Link>Calendars\Recurrence\HourlyUntil1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\Minutely1.ics">
+      <Link>Calendars\Recurrence\Minutely1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\MinutelyByHour1.ics">
+      <Link>Calendars\Recurrence\MinutelyByHour1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\MinutelyCount1.ics">
+      <Link>Calendars\Recurrence\MinutelyCount1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\MinutelyCount2.ics">
+      <Link>Calendars\Recurrence\MinutelyCount2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\MinutelyCount3.ics">
+      <Link>Calendars\Recurrence\MinutelyCount3.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\MinutelyCount4.ics">
+      <Link>Calendars\Recurrence\MinutelyCount4.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\MinutelyInterval1.ics">
+      <Link>Calendars\Recurrence\MinutelyInterval1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\Monthly1.ics">
+      <Link>Calendars\Recurrence\Monthly1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\MonthlyByDay1.ics">
+      <Link>Calendars\Recurrence\MonthlyByDay1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\MonthlyByMonthDay1.ics">
+      <Link>Calendars\Recurrence\MonthlyByMonthDay1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\MonthlyByMonthDay2.ics">
+      <Link>Calendars\Recurrence\MonthlyByMonthDay2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\MonthlyBySetPos1.ics">
+      <Link>Calendars\Recurrence\MonthlyBySetPos1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\MonthlyBySetPos2.ics">
+      <Link>Calendars\Recurrence\MonthlyBySetPos2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\MonthlyCountByDay1.ics">
+      <Link>Calendars\Recurrence\MonthlyCountByDay1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\MonthlyCountByDay2.ics">
+      <Link>Calendars\Recurrence\MonthlyCountByDay2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\MonthlyCountByDay3.ics">
+      <Link>Calendars\Recurrence\MonthlyCountByDay3.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\MonthlyCountByMonthDay1.ics">
+      <Link>Calendars\Recurrence\MonthlyCountByMonthDay1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\MonthlyCountByMonthDay2.ics">
+      <Link>Calendars\Recurrence\MonthlyCountByMonthDay2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\MonthlyCountByMonthDay3.ics">
+      <Link>Calendars\Recurrence\MonthlyCountByMonthDay3.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\MonthlyInterval1.ics">
+      <Link>Calendars\Recurrence\MonthlyInterval1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\MonthlyUntilByDay1.ics">
+      <Link>Calendars\Recurrence\MonthlyUntilByDay1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\Secondly1.ics">
+      <Link>Calendars\Recurrence\Secondly1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\WeeklyCount1.ics">
+      <Link>Calendars\Recurrence\WeeklyCount1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\WeeklyCountWkst1.ics">
+      <Link>Calendars\Recurrence\WeeklyCountWkst1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\WeeklyCountWkst2.ics">
+      <Link>Calendars\Recurrence\WeeklyCountWkst2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\WeeklyCountWkst3.ics">
+      <Link>Calendars\Recurrence\WeeklyCountWkst3.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\WeeklyCountWkst4.ics">
+      <Link>Calendars\Recurrence\WeeklyCountWkst4.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\WeeklyInterval1.ics">
+      <Link>Calendars\Recurrence\WeeklyInterval1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\WeeklyUntil1.ics">
+      <Link>Calendars\Recurrence\WeeklyUntil1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\WeeklyUntilWkst1.ics">
+      <Link>Calendars\Recurrence\WeeklyUntilWkst1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\WeeklyUntilWkst2.ics">
+      <Link>Calendars\Recurrence\WeeklyUntilWkst2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\WeeklyWkst1.ics">
+      <Link>Calendars\Recurrence\WeeklyWkst1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\Yearly1.ics">
+      <Link>Calendars\Recurrence\Yearly1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\YearlyByDay1.ics">
+      <Link>Calendars\Recurrence\YearlyByDay1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\YearlyByMonth1.ics">
+      <Link>Calendars\Recurrence\YearlyByMonth1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\YearlyByMonth2.ics">
+      <Link>Calendars\Recurrence\YearlyByMonth2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\YearlyByMonth3.ics">
+      <Link>Calendars\Recurrence\YearlyByMonth3.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\YearlyByMonthDay1.ics">
+      <Link>Calendars\Recurrence\YearlyByMonthDay1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\YearlyBySetPos1.ics">
+      <Link>Calendars\Recurrence\YearlyBySetPos1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\YearlyByWeekNo1.ics">
+      <Link>Calendars\Recurrence\YearlyByWeekNo1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\YearlyByWeekNo2.ics">
+      <Link>Calendars\Recurrence\YearlyByWeekNo2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\YearlyByWeekNo3.ics">
+      <Link>Calendars\Recurrence\YearlyByWeekNo3.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\YearlyByWeekNo4.ics">
+      <Link>Calendars\Recurrence\YearlyByWeekNo4.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\YearlyByWeekNo5.ics">
+      <Link>Calendars\Recurrence\YearlyByWeekNo5.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\YearlyComplex1.ics">
+      <Link>Calendars\Recurrence\YearlyComplex1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\YearlyCountByMonth1.ics">
+      <Link>Calendars\Recurrence\YearlyCountByMonth1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\YearlyCountByYearDay1.ics">
+      <Link>Calendars\Recurrence\YearlyCountByYearDay1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Recurrence\YearlyInterval1.ics">
+      <Link>Calendars\Recurrence\YearlyInterval1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Journal\JOURNAL1.ics">
+      <Link>Calendars\Journal\JOURNAL1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Journal\JOURNAL2.ics">
+      <Link>Calendars\Journal\JOURNAL2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Alarm\ALARM1.ics">
+      <Link>Calendars\Alarm\ALARM1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Alarm\ALARM2.ics">
+      <Link>Calendars\Alarm\ALARM2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Alarm\ALARM3.ics">
+      <Link>Calendars\Alarm\ALARM3.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Alarm\ALARM4.ics">
+      <Link>Calendars\Alarm\ALARM4.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Alarm\ALARM5.ics">
+      <Link>Calendars\Alarm\ALARM5.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Alarm\ALARM6.ics">
+      <Link>Calendars\Alarm\ALARM6.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Alarm\ALARM7.ics">
+      <Link>Calendars\Alarm\ALARM7.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Attachment3.ics">
+      <Link>Calendars\Serialization\Attachment3.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Attachment4.ics">
+      <Link>Calendars\Serialization\Attachment4.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Attendee1.ics">
+      <Link>Calendars\Serialization\Attendee1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Attendee2.ics">
+      <Link>Calendars\Serialization\Attendee2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Bug2033495.ics">
+      <Link>Calendars\Serialization\Bug2033495.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Bug2148092.ics">
+      <Link>Calendars\Serialization\Bug2148092.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Bug2938007.ics">
+      <Link>Calendars\Serialization\Bug2938007.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Bug3363485.ics">
+      <Link>Calendars\Serialization\Bug3363485.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Bug3379920.ics">
+      <Link>Calendars\Serialization\Bug3379920.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Calendar1.ics">
+      <Link>Calendars\Serialization\Calendar1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\CalendarParameters2.ics">
+      <Link>Calendars\Serialization\CalendarParameters2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\CaseInsensitive1.ics">
+      <Link>Calendars\Serialization\CaseInsensitive1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\CaseInsensitive2.ics">
+      <Link>Calendars\Serialization\CaseInsensitive2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\CaseInsensitive3.ics">
+      <Link>Calendars\Serialization\CaseInsensitive3.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\CaseInsensitive4.ics">
+      <Link>Calendars\Serialization\CaseInsensitive4.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Categories1.ics">
+      <Link>Calendars\Serialization\Categories1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\DateTime1.ics">
+      <Link>Calendars\Serialization\DateTime1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\DateTime2.ics">
+      <Link>Calendars\Serialization\DateTime2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Duration1.ics">
+      <Link>Calendars\Serialization\Duration1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\EmptyLines1.ics">
+      <Link>Calendars\Serialization\EmptyLines1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\EmptyLines2.ics">
+      <Link>Calendars\Serialization\EmptyLines2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\EmptyLines3.ics">
+      <Link>Calendars\Serialization\EmptyLines3.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\EmptyLines4.ics">
+      <Link>Calendars\Serialization\EmptyLines4.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Encoding1.ics">
+      <Link>Calendars\Serialization\Encoding1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Encoding2.ics">
+      <Link>Calendars\Serialization\Encoding2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Encoding3.ics">
+      <Link>Calendars\Serialization\Encoding3.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Event1.ics">
+      <Link>Calendars\Serialization\Event1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Event2.ics">
+      <Link>Calendars\Serialization\Event2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Event3.ics">
+      <Link>Calendars\Serialization\Event3.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Event4.ics">
+      <Link>Calendars\Serialization\Event4.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\GeographicLocation1.ics">
+      <Link>Calendars\Serialization\GeographicLocation1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Google1.ics">
+      <Link>Calendars\Serialization\Google1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Language1.ics">
+      <Link>Calendars\Serialization\Language1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Language2.ics">
+      <Link>Calendars\Serialization\Language2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Language3.ics">
+      <Link>Calendars\Serialization\Language3.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Language4.ics">
+      <Link>Calendars\Serialization\Language4.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Outlook2007LineFolds.ics">
+      <Link>Calendars\Serialization\Outlook2007LineFolds.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\PARSE17.ics">
+      <Link>Calendars\Serialization\PARSE17.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Parameter1.ics">
+      <Link>Calendars\Serialization\Parameter1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Parameter2.ics">
+      <Link>Calendars\Serialization\Parameter2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Parse1.ics">
+      <Link>Calendars\Serialization\Parse1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\ProdID1.ics">
+      <Link>Calendars\Serialization\ProdID1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\ProdID2.ics">
+      <Link>Calendars\Serialization\ProdID2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Property1.ics">
+      <Link>Calendars\Serialization\Property1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\RecurrenceDates1.ics">
+      <Link>Calendars\Serialization\RecurrenceDates1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\RequestStatus1.ics">
+      <Link>Calendars\Serialization\RequestStatus1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\TimeZone1.ics">
+      <Link>Calendars\Serialization\TimeZone1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\TimeZone2.ics">
+      <Link>Calendars\Serialization\TimeZone2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\TimeZone3.ics">
+      <Link>Calendars\Serialization\TimeZone3.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Todo1.ics">
+      <Link>Calendars\Serialization\Todo1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Todo2.ics">
+      <Link>Calendars\Serialization\Todo2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Todo3.ics">
+      <Link>Calendars\Serialization\Todo3.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Todo4.ics">
+      <Link>Calendars\Serialization\Todo4.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Todo5.ics">
+      <Link>Calendars\Serialization\Todo5.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Todo6.ics">
+      <Link>Calendars\Serialization\Todo6.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Todo7.ics">
+      <Link>Calendars\Serialization\Todo7.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Transparency1.ics">
+      <Link>Calendars\Serialization\Transparency1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Transparency2.ics">
+      <Link>Calendars\Serialization\Transparency2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\Trigger1.ics">
+      <Link>Calendars\Serialization\Trigger1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\USHolidays.ics">
+      <Link>Calendars\Serialization\USHolidays.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\XProperty1.ics">
+      <Link>Calendars\Serialization\XProperty1.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Calendars\Serialization\XProperty2.ics">
+      <Link>Calendars\Serialization\XProperty2.ics</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Data\Test.doc">
+      <Link>Data\Test.doc</Link>
+    </BundleResource>
+    <BundleResource Include="..\DDay.iCal.Test\Data\LoremIpsum.txt">
+      <Link>Data\LoremIpsum.txt</Link>
+    </BundleResource>
+  </ItemGroup>
+</Project>

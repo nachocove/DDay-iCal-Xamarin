@@ -5,7 +5,6 @@ using System.Text;
 using System.Collections;
 using System.IO;
 using System.Resources;
-using System.Web;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using NUnit.Framework;
@@ -26,7 +25,7 @@ namespace DDay.iCal.Test
         [Test, Category("Journal")]
         public void Journal1()
         {
-            IICalendar iCal = iCalendar.LoadFromFile(@"Calendars\Journal\JOURNAL1.ics")[0];
+            IICalendar iCal = iCalendar.LoadFromFile(@"Calendars/Journal/JOURNAL1.ics")[0];
             ProgramTest.TestCal(iCal);
             Assert.AreEqual(1, iCal.Journals.Count);
             IJournal j = iCal.Journals[0];
@@ -40,7 +39,7 @@ namespace DDay.iCal.Test
         [Test, Category("Journal")]
         public void Journal2()
         {
-            IICalendar iCal = iCalendar.LoadFromFile(@"Calendars\Journal\JOURNAL2.ics")[0];
+            IICalendar iCal = iCalendar.LoadFromFile(@"Calendars/Journal/JOURNAL2.ics")[0];
             ProgramTest.TestCal(iCal);
             Assert.AreEqual(1, iCal.Journals.Count);
             IJournal j = iCal.Journals.First();

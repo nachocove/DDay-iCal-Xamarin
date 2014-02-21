@@ -7,7 +7,6 @@ using System.Reflection;
 using System.Resources;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Web;
 using NUnit.Framework;
 
 namespace DDay.iCal.Test
@@ -25,7 +24,7 @@ namespace DDay.iCal.Test
 
         public void TestAlarm(string calendar, List<IDateTime> dates, iCalDateTime start, iCalDateTime end)
         {
-            IICalendar iCal = iCalendar.LoadFromFile(@"Calendars\Alarm\" + calendar)[0];
+            IICalendar iCal = iCalendar.LoadFromFile(@"Calendars/Alarm/" + calendar)[0];
             ProgramTest.TestCal(iCal);
             IEvent evt = iCal.Events.First();
             
