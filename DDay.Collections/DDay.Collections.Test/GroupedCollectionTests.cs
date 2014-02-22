@@ -245,7 +245,7 @@ namespace DDay.Collections.Test
             long group = -1;
             foreach (var person in _People)
             {
-                Assert.LessOrEqual(group, person.Group);
+                Assert.True(group <= person.Group);
                 group = person.Group;
             }
         }
