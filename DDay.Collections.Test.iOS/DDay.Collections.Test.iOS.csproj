@@ -91,9 +91,6 @@
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
     <Reference Include="MonoTouch.NUnitLite" />
-    <Reference Include="DDay.Collections">
-      <HintPath>..\..\..\Downloads\DDay\DDay.Collections\DDay.Collections\bin\Debug\DDay.Collections.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -122,4 +119,10 @@
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\DDay.Collections.iOS\DDay.Collections.iOS.csproj">
+      <Project>{B7EE901B-1302-42C7-98D1-18666CB7D6DC}</Project>
+      <Name>DDay.Collections.iOS</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

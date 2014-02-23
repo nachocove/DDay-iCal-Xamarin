@@ -277,14 +277,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <ItemGroup>
-    <ProjectReference Include="..\antlr\antlr.runtime\antlr.runtime.csproj">
-      <Project>{CB7CC882-ED47-46C0-AAAE-7A437F22F1C6}</Project>
-      <Name>antlr.runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DDay.Collections\DDay.Collections\DDay.Collections.csproj">
-      <Project>{E04EFEB6-4625-4D58-AC91-7B8B8A2C97BB}</Project>
-      <Name>DDay.Collections</Name>
-    </ProjectReference>
-  </ItemGroup>
 </Project>

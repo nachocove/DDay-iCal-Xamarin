@@ -46,15 +46,6 @@
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
     <Reference Include="Xamarin.Android.NUnitLite" />
-    <Reference Include="antlr.runtime">
-      <HintPath>..\..\..\Downloads\DDay\antlr\antlr.runtime\bin\antlr.runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="DDay.Collections">
-      <HintPath>..\..\..\Downloads\DDay\DDay.Collections\DDay.Collections\bin\Debug\DDay.Collections.dll</HintPath>
-    </Reference>
-    <Reference Include="DDay.iCal">
-      <HintPath>..\..\..\Downloads\DDay\DDay.iCal\bin\Debug\DDay.iCal.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -547,5 +538,19 @@
     <AndroidAsset Include="..\DDay.iCal.Test\Calendars\Alarm\ALARM7.ics">
       <Link>Assets\Calendars\Alarm\ALARM7.ics</Link>
     </AndroidAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\antlr.runtime.Android\antlr.runtime.Android.csproj">
+      <Project>{1923FB99-0E59-4774-8AA9-C14B9BC3F655}</Project>
+      <Name>antlr.runtime.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDay.Collections.Android\DDay.Collections.Android.csproj">
+      <Project>{B1C25481-681E-4D29-86B0-81F8FE327E0B}</Project>
+      <Name>DDay.Collections.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDay.iCal.Android\DDay.iCal.Android.csproj">
+      <Project>{7CDD1BB5-9CD8-421B-8BC9-89F335170BBB}</Project>
+      <Name>DDay.iCal.Android</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

@@ -46,9 +46,6 @@
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
     <Reference Include="Xamarin.Android.NUnitLite" />
-    <Reference Include="DDay.Collections">
-      <HintPath>..\..\..\Downloads\DDay\DDay.Collections\DDay.Collections\bin\Debug\DDay.Collections.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -79,4 +76,10 @@
     <AndroidResource Include="Resources\drawable\Icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\DDay.Collections.Android\DDay.Collections.Android.csproj">
+      <Project>{B1C25481-681E-4D29-86B0-81F8FE327E0B}</Project>
+      <Name>DDay.Collections.Android</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
