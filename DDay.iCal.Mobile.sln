@@ -279,7 +279,7 @@ Global
 		{F7BA7D6E-2CFC-4297-99A8-9D02B37EC2A4}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = DDay.iCal.Test.iOS\DDay.iCal.Test.iOS.csproj
+		StartupItem = DDay.iCal.Test.Android\DDay.iCal.Test.Android.csproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
