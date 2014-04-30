@@ -308,12 +308,12 @@ namespace DDay.iCal
 
         private void ExtrapolateTimes()
         {
-            if (DTEnd == null && DTStart != null && Duration != default(TimeSpan))
-                DTEnd = DTStart.Add(Duration);
-            else if (Duration == default(TimeSpan) && DTStart != null && DTEnd != null)
-                Duration = DTEnd.Subtract(DTStart);
-            else if (DTStart == null && Duration != default(TimeSpan) && DTEnd != null)
-                DTStart = DTEnd.Subtract(Duration);
+//            if (DTEnd == null && DTStart != null && Duration != default(TimeSpan))
+//                DTEnd = DTStart.Add(Duration);
+//            else if (Duration == default(TimeSpan) && DTStart != null && DTEnd != null)
+//                Duration = DTEnd.Subtract(DTStart);
+//            else if (DTStart == null && Duration != default(TimeSpan) && DTEnd != null)
+//                DTStart = DTEnd.Subtract(Duration);
         }
 
         #endregion
