@@ -16,7 +16,9 @@ namespace DDay.iCal.Test
     [TestFixture]
     public class SerializationTest
     {
+        #pragma warning disable 0414
         private string tzid;
+        #pragma warning restore 0414
 
         [TestFixtureSetUp]
         public void InitAll()
@@ -867,7 +869,9 @@ namespace DDay.iCal.Test
             eventSerializer.Serialize(evt, fs, Encoding.UTF8);
             fs.Close();
 
+            #pragma warning disable 0219
             iCalendar iCal1 = new iCalendar();
+            #pragma warning restore 0219
 
             fs = new FileStream(@"Calendars/Serialization/Event6.ics", FileMode.Open, FileAccess.Read);
             Event evt1 = CalendarComponent.LoadFromStream<Event>(fs, Encoding.UTF8);
@@ -1162,7 +1166,8 @@ Please do not reply to this email. Replies to this email will not be responded t
 Ticketmaster UK Limited Registration in England No 2662632, Registered Office, 48 Leicester Square, London WC2H 7LR ";
 
             iCalendarSerializer serializer = new iCalendarSerializer(iCal);
-            serializer.Serialize(@"Calendars/Serialization/String1.ics");
+//            serializer.Serialize(@"Calendars/Serialization/String1.ics");
+            serializer.Serialize(iCal, @"Calendars/Serialization/String1.ics");
 
             SerializeTest("String1.ics", typeof(iCalendarSerializer));
         }
@@ -1570,7 +1575,9 @@ Ticketmaster UK Limited Registration in England No 2662632, Registered Office, 4
 
             // Ensure that LoadFromUri() and LoadFromFile() produce identical results.
             // Thanks to Eugene, a student from Russia, who helped track down this bug.
+            #pragma warning disable 0219
             Assembly assembly = Assembly.GetExecutingAssembly();
+            #pragma warning restore 0219
             IICalendar russia1 = iCalendar.LoadFromUri(new Uri(Path.Combine(calendarPath, "Language3.ics")))[0];
             IICalendar russia2 = iCalendar_LoadFromFile(Path.Combine(calendarPath, "Language3.ics"))[0];
 

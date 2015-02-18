@@ -265,8 +265,10 @@ namespace DDay.iCal
                 if (pattern.Until != DateTime.MinValue && candidate != DateTime.MinValue && candidate > pattern.Until)
                     break;
 
+                #pragma warning disable 0472
                 if (periodEnd != null && candidate != DateTime.MinValue && candidate > periodEnd)
                     break;
+                #pragma warning restore 0472
                                 
                 if (pattern.Count >= 1 && (dates.Count + invalidCandidateCount) >= pattern.Count)
                     break;                

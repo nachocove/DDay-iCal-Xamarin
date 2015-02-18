@@ -48,6 +48,7 @@ namespace DDay.iCal
             base.Evaluate(referenceTime, periodStart, periodEnd, includeReferenceDateInResults);
 
             // Ensure each period has a duration
+            #pragma warning disable 0162, 0472
             for (int i = 0; i < Periods.Count; i++)
             {
                 IPeriod p = Periods[i];
@@ -59,6 +60,7 @@ namespace DDay.iCal
                     else p.EndTime = p.StartTime;
                 }
             }
+            #pragma warning restore 0162, 0472
 
             return Periods;
         }

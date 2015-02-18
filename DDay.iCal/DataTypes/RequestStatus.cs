@@ -16,6 +16,7 @@ namespace DDay.iCal
 #if !SILVERLIGHT
     [Serializable]
 #endif
+    #pragma warning disable 0659
     public class RequestStatus :
         EncodableDataType,
         IRequestStatus

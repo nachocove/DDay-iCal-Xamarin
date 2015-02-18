@@ -212,8 +212,10 @@ _loop9_breakloop:			;
 		
 			ISerializerFactory sf = ctx.GetService(typeof(ISerializerFactory)) as ISerializerFactory;
 			ICalendarComponentFactory cf = ctx.GetService(typeof(ICalendarComponentFactory)) as ICalendarComponentFactory;
+            #pragma warning disable 0168
 			ICalendarComponent c;
 			ICalendarProperty p;
+            #pragma warning restore 0168
 		
 		{    // ( ... )*
 			for (;;)

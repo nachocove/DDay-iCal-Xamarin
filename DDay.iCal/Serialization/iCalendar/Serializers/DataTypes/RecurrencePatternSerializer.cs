@@ -75,7 +75,9 @@ namespace DDay.iCal.Serialization.iCalendar
 
                 Type 
                     t1 = obj1.GetType(),
+                #pragma warning disable 0219
                     t2 = obj2.GetType();
+                #pragma warning restore 0219
 
                 FieldInfo fi1 = t1.GetField("MinValue");
                 FieldInfo fi2 = t1.GetField("MinValue");

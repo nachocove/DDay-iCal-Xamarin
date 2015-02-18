@@ -59,10 +59,12 @@ namespace DDay.iCal.Serialization.iCalendar
                 {                    
                     properties.Sort(PropertySorter);
                 }
-                catch (Exception e)
+                #pragma warning disable 0168
+                               catch (Exception e)
                 {
                     throw;
                 }
+                #pragma warning restore 0168
 
                 // Serialize properties
                 foreach (ICalendarProperty p in properties)

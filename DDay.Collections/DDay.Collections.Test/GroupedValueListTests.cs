@@ -65,7 +65,9 @@ namespace DDay.Collections.Test
             _Properties.Set("CATEGORIES", new string[] { "Work", "Personal" });
             Assert.AreEqual(1, itemsAdded);
 
+            #pragma warning disable 0219
             var items = categories.ToArray();
+            #pragma warning restore 0219
             Assert.AreEqual(2, categories.Count);
         }
 

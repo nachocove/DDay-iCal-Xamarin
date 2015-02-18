@@ -313,7 +313,9 @@ namespace DDay.Collections
 
         virtual public void SortKeys(IComparer<TGroup> comparer = null)
         {
+            #pragma warning disable 0219
             TGroup[] keys = _Dictionary.Keys.ToArray();
+            #pragma warning restore 0219
 
             _Lists.Clear();
 

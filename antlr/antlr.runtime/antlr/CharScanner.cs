@@ -745,7 +745,10 @@ namespace antlr
                 SetTokenType(tokenTypeName);
             }
 
+            #pragma warning disable 0414
             private CharScanner owner;
+            #pragma warning restore 0414
+
 
             /// <summary>
             /// The fully qualified name of the Token type to create.

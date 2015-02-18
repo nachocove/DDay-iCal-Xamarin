@@ -373,6 +373,7 @@ namespace DDay.iCal.Test
             foreach (var zone in zones)
             {
                 tzinfo = null;
+        #pragma warning disable 0168
                 try
                 {
                     tzinfo = System.TimeZoneInfo.FindSystemTimeZoneById(zone.Id);                    
@@ -381,6 +382,7 @@ namespace DDay.iCal.Test
                 {
                     Assert.Fail("Not found: " + zone.StandardName);                    
                 }
+        #pragma warning restore 0168
 
                 if (tzinfo != null)
                 {

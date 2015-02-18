@@ -18,7 +18,9 @@ namespace DDay.iCal
         #region Private Fields
 
         ICalendarObject m_Parent;
+        #pragma warning disable 0649
         bool m_CaseInsensitive;
+        #pragma warning restore 0649
 
         #endregion
 

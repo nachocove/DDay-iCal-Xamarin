@@ -1935,9 +1935,11 @@ namespace DDay.iCal.Test
                         using (StreamReader sr = new StreamReader (Android.MainActivity.am.Open (@"Calendars/Recurrence/Secondly1.ics"))) {
                             iCal = iCalendar.LoadFromStream(sr)[0];
                         }
+                        #pragma warning disable 0219
                         IList<Occurrence> occurrences = iCal.GetOccurrences(
                             new iCalDateTime(2007, 6, 21, 8, 0, 0, tzid),
                             new iCalDateTime(2007, 7, 21, 8, 0, 0, tzid));
+                        #pragma warning restore 0219
                     }
                     catch(EvaluationEngineException)
                     {
@@ -1990,9 +1992,11 @@ namespace DDay.iCal.Test
         {
             IICalendar iCal = iCalendar_LoadFromFile(@"Calendars/Recurrence/Minutely1.ics")[0];
             iCal.RecurrenceRestriction = RecurrenceRestrictionType.RestrictMinutely;
+            #pragma warning disable 0219
             IList<Occurrence> occurrences = iCal.GetOccurrences(
                 new iCalDateTime(2007, 6, 21, 8, 0, 0, tzid),
                 new iCalDateTime(2007, 7, 21, 8, 0, 0, tzid));
+            #pragma warning restore 0219
         }
 
         /// <summary>
@@ -2030,9 +2034,11 @@ namespace DDay.iCal.Test
         {
             IICalendar iCal = iCalendar_LoadFromFile(@"Calendars/Recurrence/Hourly1.ics")[0];
             iCal.RecurrenceRestriction = RecurrenceRestrictionType.RestrictHourly;
+            #pragma warning disable 0219
             IList<Occurrence> occurrences = iCal.GetOccurrences(
                 new iCalDateTime(2007, 6, 21, 8, 0, 0, tzid),
                 new iCalDateTime(2007, 7, 21, 8, 0, 0, tzid));
+            #pragma warning restore 0219
         }
 
         /// <summary>
@@ -3176,7 +3182,9 @@ namespace DDay.iCal.Test
 
             try
             {
+                #pragma warning disable 0219
                 IList<Occurrence> occurrences = evt.GetOccurrences(DateTime.Today.AddDays(1), DateTime.Today.AddDays(2));
+                #pragma warning restore 0219
                 Assert.Fail("An exception should be thrown when evaluating a recurrence with no specified FREQUENCY");
             }
             catch { }

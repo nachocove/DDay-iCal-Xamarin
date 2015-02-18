@@ -19,7 +19,9 @@ namespace DDay.iCal
         GroupedList<string, ICalendarObject>,
         ICalendarObjectList<ICalendarObject>
     {
+        #pragma warning disable 0414
         ICalendarObject _Parent;
+        #pragma warning restore 0414
 
         public CalendarObjectList(ICalendarObject parent)
         {

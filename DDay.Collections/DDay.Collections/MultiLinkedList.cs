@@ -12,7 +12,10 @@ namespace DDay.Collections
         #region Private Fields
 
         IMultiLinkedList<TType> _Previous;
+
+        #pragma warning disable 0414
         IMultiLinkedList<TType> _Next;
+        #pragma warning restore 0414
 
         #endregion
 

@@ -14,7 +14,9 @@ namespace DDay.iCal.Test
     [TestFixture]
     public class JournalTest
     {
+        #pragma warning disable 0414
         private string tzid;
+        #pragma warning restore 0414
 
         IICalendarCollection iCalendar_LoadFromFile(string path)
         {

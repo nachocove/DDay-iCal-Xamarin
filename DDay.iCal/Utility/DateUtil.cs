@@ -8,7 +8,9 @@ namespace DDay.iCal
 {
     public class DateUtil
     {
+        #pragma warning disable 0414
         static private System.Globalization.Calendar _Calendar;
+        #pragma warning restore 0414
 
         static DateUtil()
         {

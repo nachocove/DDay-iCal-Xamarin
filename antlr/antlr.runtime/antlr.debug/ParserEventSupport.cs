@@ -35,7 +35,10 @@ namespace antlr.debug
 		private SemanticPredicateEventArgs semPredEvent;
 		private SyntacticPredicateEventArgs synPredEvent;
 		private TraceEventArgs traceEvent;
+
+        #pragma warning disable 0414
 		private NewLineEventArgs newLineEvent;
+        #pragma warning restore 0414
 
 		private ParserController controller;
 

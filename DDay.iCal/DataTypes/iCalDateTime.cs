@@ -159,7 +159,8 @@ namespace DDay.iCal
 
         #region Protected Methods
 
-        protected TimeZoneObservance? GetTimeZoneObservance()
+//        protected TimeZoneObservance? GetTimeZoneObservance()
+        private TimeZoneObservance? GetTimeZoneObservance()
         {
             if (_TimeZoneObservance == null &&
                 TZID != null &&

@@ -190,6 +190,7 @@ namespace DDay.iCal
         /// </summary>
         virtual protected void AddRepeatedItems()
         {
+            #pragma warning disable 0472
             if (Repeat != null)
             {
                 int len = Occurrences.Count;
@@ -205,6 +206,7 @@ namespace DDay.iCal
                     }
                 }
             }
+            #pragma warning restore 0472
         }
 
         #endregion

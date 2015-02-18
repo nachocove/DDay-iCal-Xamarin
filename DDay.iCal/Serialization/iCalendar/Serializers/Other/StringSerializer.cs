@@ -77,7 +77,9 @@ namespace DDay.iCal.Serialization.iCalendar
         {
             if (obj != null)
             {
+                #pragma warning disable 0219
                 ISerializationSettings settings = GetService<ISerializationSettings>();                
+                #pragma warning restore 0219
 
                 List<string> values = new List<string>();
                 if (obj is string)
@@ -171,7 +173,9 @@ namespace DDay.iCal.Serialization.iCalendar
                 {
                     // Determine if our we're supposed to store extra information during
                     // the serialization process.  If so, let's store the escaped value.
+                    #pragma warning disable 0219
                     ICalendarProperty property = (ICalendarProperty)co;
+                    #pragma warning restore 0219
                     ISerializationSettings settings = GetService<ISerializationSettings>();
                     if (settings != null &&
                         settings.StoreExtraSerializationData)

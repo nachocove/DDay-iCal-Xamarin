@@ -1924,9 +1924,11 @@ namespace DDay.iCal.Test
                     try
                     {
                         IICalendar iCal = iCalendar.LoadFromFile(@"Calendars/Recurrence/Secondly1.ics")[0];
+                        #pragma warning disable 0219
                         IList<Occurrence> occurrences = iCal.GetOccurrences(
                             new iCalDateTime(2007, 6, 21, 8, 0, 0, tzid),
                             new iCalDateTime(2007, 7, 21, 8, 0, 0, tzid));
+                        #pragma warning restore 0219
                     }
                     catch(EvaluationEngineException)
                     {
@@ -1979,9 +1981,11 @@ namespace DDay.iCal.Test
         {
             IICalendar iCal = iCalendar.LoadFromFile(@"Calendars/Recurrence/Minutely1.ics")[0];
             iCal.RecurrenceRestriction = RecurrenceRestrictionType.RestrictMinutely;
+            #pragma warning disable 0219
             IList<Occurrence> occurrences = iCal.GetOccurrences(
                 new iCalDateTime(2007, 6, 21, 8, 0, 0, tzid),
                 new iCalDateTime(2007, 7, 21, 8, 0, 0, tzid));
+            #pragma warning restore 0219
         }
 
         /// <summary>
@@ -2019,9 +2023,11 @@ namespace DDay.iCal.Test
         {
             IICalendar iCal = iCalendar.LoadFromFile(@"Calendars/Recurrence/Hourly1.ics")[0];
             iCal.RecurrenceRestriction = RecurrenceRestrictionType.RestrictHourly;
+            #pragma warning disable 0219
             IList<Occurrence> occurrences = iCal.GetOccurrences(
                 new iCalDateTime(2007, 6, 21, 8, 0, 0, tzid),
                 new iCalDateTime(2007, 7, 21, 8, 0, 0, tzid));
+            #pragma warning restore 0219
         }
 
         /// <summary>
@@ -3165,7 +3171,9 @@ namespace DDay.iCal.Test
 
             try
             {
+                #pragma warning disable 0219
                 IList<Occurrence> occurrences = evt.GetOccurrences(DateTime.Today.AddDays(1), DateTime.Today.AddDays(2));
+                #pragma warning restore 0219
                 Assert.Fail("An exception should be thrown when evaluating a recurrence with no specified FREQUENCY");
             }
             catch { }

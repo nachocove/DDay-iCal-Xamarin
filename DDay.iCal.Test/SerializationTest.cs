@@ -16,7 +16,9 @@ namespace DDay.iCal.Test
     [TestFixture]
     public class SerializationTest
     {
+        #pragma warning disable 0414
         private string tzid;
+        #pragma warning restore 0414
 
         [TestFixtureSetUp]
         public void InitAll()
@@ -846,7 +848,9 @@ namespace DDay.iCal.Test
             eventSerializer.Serialize(evt, fs, Encoding.UTF8);
             fs.Close();
 
+            #pragma warning disable 0219
             iCalendar iCal1 = new iCalendar();
+            #pragma warning restore 0219
 
             fs = new FileStream(@"Calendars/Serialization/Event6.ics", FileMode.Open, FileAccess.Read);
             Event evt1 = CalendarComponent.LoadFromStream<Event>(fs, Encoding.UTF8);
@@ -1113,10 +1117,10 @@ You purchased 2 tickets to:
 _____________________________________________________________________________________________ 
 Prince
 The O2, London, UK
-Fri 31 Aug 2007, 18:00 
+Fri 31 Aug 2007, 18:00ï¿½
 
 Seat location: section BK 419, row M, seats 912-913
-Total Charge: £69.42
+Total Charge: ï¿½69.42
 
 http://ads.as4x.tmcs.ticketmaster.com/click.ng/site=tm&pagepos=531&adsize=336x102&lang=en-uk&majorcatid=10001&minorcatid=1&event_id=12003EA8AD65189AD&venueid=148826&artistid=135895&promoter=161&TransactionID=0902229695751936911UKA
 Thanks again for using Ticketmaster.
@@ -1125,7 +1129,7 @@ You can always check your order and manage your preferences in  HYPERLINK ""http
 
 _____________________________________________________________________________________________
 
-C  U  S  T  O  M  E  R      S  E  R  V  I  C  E 
+Cï¿½ï¿½Uï¿½ï¿½Sï¿½ï¿½Tï¿½ï¿½Oï¿½ï¿½Mï¿½ï¿½Eï¿½ï¿½R ï¿½ï¿½ï¿½ï¿½ Sï¿½ï¿½Eï¿½ï¿½Rï¿½ï¿½Vï¿½ï¿½Iï¿½ï¿½Cï¿½ï¿½E 
 _____________________________________________________________________________________________
 
 If you have any questions regarding your booking you can search for answers using our online helpdesk at http://ticketmaster.custhelp.com
@@ -1141,7 +1145,8 @@ Please do not reply to this email. Replies to this email will not be responded t
 Ticketmaster UK Limited Registration in England No 2662632, Registered Office, 48 Leicester Square, London WC2H 7LR ";
 
             iCalendarSerializer serializer = new iCalendarSerializer(iCal);
-            serializer.Serialize(@"Calendars/Serialization/String1.ics");
+//            serializer.Serialize(@"Calendars/Serialization/String1.ics");
+            serializer.Serialize(iCal, @"Calendars/Serialization/String1.ics");
 
             SerializeTest("String1.ics", typeof(iCalendarSerializer));
         }
@@ -1549,7 +1554,9 @@ Ticketmaster UK Limited Registration in England No 2662632, Registered Office, 4
 
             // Ensure that LoadFromUri() and LoadFromFile() produce identical results.
             // Thanks to Eugene, a student from Russia, who helped track down this bug.
+            #pragma warning disable 0219
             Assembly assembly = Assembly.GetExecutingAssembly();
+            #pragma warning restore 0219
             IICalendar russia1 = iCalendar.LoadFromUri(new Uri(Path.Combine(calendarPath, "Language3.ics")))[0];
             IICalendar russia2 = iCalendar.LoadFromFile(Path.Combine(calendarPath, "Language3.ics"))[0];
 

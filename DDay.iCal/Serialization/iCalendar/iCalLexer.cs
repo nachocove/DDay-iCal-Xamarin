@@ -91,16 +91,22 @@ namespace DDay.iCal
 		{
 			caseSensitiveLiterals = true;
 			setCaseSensitive(true);
-			literals = new Hashtable(100, (float) 0.4, null, Comparer.Default);
+//			literals = new Hashtable(100, (float) 0.4, null, Comparer.Default);
+            literals = new Hashtable ();
+
 		}
 		
 		override public IToken nextToken()			//throws TokenStreamException
 		{
+            #pragma warning disable 0219
 			IToken theRetToken = null;
+            #pragma warning restore 0219
 tryAgain:
 			for (;;)
 			{
+                #pragma warning disable 0219
 				IToken _token = null;
+                #pragma warning restore 0219
 				int _ttype = Token.INVALID_TYPE;
 				resetText();
 				try     // for char stream error handling

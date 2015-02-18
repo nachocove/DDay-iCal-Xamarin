@@ -39,12 +39,14 @@ namespace DDay.iCal.Serialization.iCalendar
                         // Serialize the start time                    
                         sb.Append(dtSerializer.SerializeToString(p.StartTime));
 
+                        #pragma warning disable 0472
                         // Serialize the duration
                         if (p.Duration != null)
                         {
                             sb.Append("/");
                             sb.Append(timeSpanSerializer.SerializeToString(p.Duration));
                         }
+                        #pragma warning restore 0472
 
                         // Encode the value as necessary
                         return Encode(p, sb.ToString());
@@ -84,8 +86,10 @@ namespace DDay.iCal.Serialization.iCalendar
                         p.Duration = (TimeSpan)durationSerializer.Deserialize(new StringReader(values[1]));
 
                     // Only return an object if it has been deserialized correctly.
+                    #pragma warning disable 0472
                     if (p.StartTime != null && p.Duration != null)
                         return p;
+                    #pragma warning restore 0472
                 }
             }
 

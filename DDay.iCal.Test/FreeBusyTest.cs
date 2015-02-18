@@ -13,7 +13,9 @@ namespace DDay.iCal.Test
     [TestFixture]
     public class FreeBusyTest
     {
+        #pragma warning disable 0414
         private string tzid;
+        #pragma warning restore 0414
 
         [TestFixtureSetUp]
         public void InitAll()

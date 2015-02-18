@@ -15,6 +15,7 @@ namespace DDay.iCal
 #if !SILVERLIGHT
     [Serializable]
 #endif
+    #pragma warning disable 0659
     public class iCalTimeZoneInfo : 
         CalendarComponent,
         ITimeZoneInfo
@@ -22,7 +23,9 @@ namespace DDay.iCal
         #region Private Fields
 
         TimeZoneInfoEvaluator m_Evaluator;
+        #pragma warning disable 0169
         DateTime m_End;
+        #pragma warning restore 0169
 
         #endregion
 
